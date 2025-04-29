@@ -11,5 +11,5 @@ module.exports = {
   bracketSpacing: true,
   bracketSameLine: false,
   proseWrap: "always",
-  endOfLine: "lf",
+  endOfLine: "auto",
 };
