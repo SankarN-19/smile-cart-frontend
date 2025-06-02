@@ -4,14 +4,15 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.css";
 import Product from "./components/Product";
 import ProductList from "./components/ProductList";
+import routes from "./routes";
 
 const App = () => (
   <Switch>
-    <Route exact component={ProductList} path="/products" />
+    <Route exact component={ProductList} path={routes.products.index} />
 
-    <Route exact component={Product} path="/products/:slug" />
+    <Route exact component={Product} path={routes.products.show} />
 
-    <Redirect exact from="/" to="/products" />
+    <Redirect exact from={routes.root} to={routes.products.index} />
 
     <Route component={PageNotFound} path="*" />
   </Switch>
