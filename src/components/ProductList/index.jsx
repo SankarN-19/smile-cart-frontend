@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import productsApi from "apis/products";
 import { Header, PageLoader } from "components/commons";
-import useDebounce from "hooks/useDebounce";
+import useDebounce from "components/hooks/useDebounce";
 import { Search } from "neetoicons";
 import { Input, NoData } from "neetoui";
 import { isEmpty, without } from "ramda";
