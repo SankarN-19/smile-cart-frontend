@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
 import productsApi from "apis/products";
+import ProductCard from "components/Cart/ProductCard";
 import { PageLoader } from "components/commons";
 import Header from "components/commons/Header";
 import { MRP, OFFER_PRICE } from "components/constants";
-import ProductCard from "components/ProductCard";
 import { cartTotalOf } from "components/utils";
 import { Toastr } from "neetoui";
 import { keys } from "ramda";
@@ -13,7 +13,7 @@ import useCartItemsStore from "stores/useCartItemsStore";
 import PriceCard from "./PriceCard";
 
 const Cart = () => {
-  const { cartItems, setSelectedQuantity } = useCartItemsStore();
+  const { cartItems, setSelectedQuantity } = useCartItemsStore.pick();
   const slugs = keys(cartItems);
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
