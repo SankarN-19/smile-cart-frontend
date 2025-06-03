@@ -1,10 +1,12 @@
 import classNames from "classnames";
 import { Button, Typography } from "neetoui";
 import { gt, keys } from "ramda";
+import { useTranslation } from "react-i18next";
 import routes from "routes";
 import useCartItemsStore from "stores/useCartItemsStore";
 
 const PriceCard = ({ totalMrp, totalOfferPrice }) => {
+  const { t } = useTranslation();
   const totalDiscounts = totalMrp - totalOfferPrice;
   const isDiscountPresent = gt(totalDiscounts, 0);
   const discountPercentage = ((totalDiscounts / totalMrp) * 100).toFixed(1);
@@ -45,7 +47,7 @@ const PriceCard = ({ totalMrp, totalOfferPrice }) => {
       <div className="flex flex-col items-center pt-4">
         <Button
           className="bg-neutral-800"
-          label="Buy now"
+          label={t("buyNow")}
           to={routes.checkout}
         />
       </div>
