@@ -1,4 +1,4 @@
-import { PageNotFound } from "components/Commons";
+import { PageNotFound } from "components/Commons/index";
 import { Route, Switch, Redirect } from "react-router-dom";
 import routes from "routes";
 
