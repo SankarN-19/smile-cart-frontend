@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Header, PageLoader } from "components/Commons";
+import { Header, PageLoader } from "components/commons";
 import { useFetchProducts } from "hooks/reactQuery/useProductsApi";
 import useFuncDebounce from "hooks/useFuncDebounce";
 import useQueryParams from "hooks/useQueryParams";

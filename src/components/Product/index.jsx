@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Header, PageNotFound, PageLoader } from "components/Commons";
-import AddToCart from "components/Commons/AddToCart";
+import { Header, PageNotFound, PageLoader } from "components/commons";
+import AddToCart from "components/commons/AddToCart";
 import useSelectedQuantity from "components/hooks/useSelectedQuantity";
 import { useShowProduct } from "hooks/reactQuery/useProductsApi";
 import { Button, Typography } from "neetoui";

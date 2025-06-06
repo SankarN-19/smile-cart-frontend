@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import AddToCart from "components/Commons/AddToCart";
+import AddToCart from "components/commons/AddToCart";
 import { Typography } from "neetoui";
 import { Link } from "react-router-dom";
 import routes from "routes";

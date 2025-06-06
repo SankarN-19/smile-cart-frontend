@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-import { PageLoader } from "components/Commons";
+import { PageLoader } from "components/commons";
 import {
   useFetchCountries,
   useCreateOrder,

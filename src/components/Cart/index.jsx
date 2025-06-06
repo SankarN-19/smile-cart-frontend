@@ -1,5 +1,5 @@
-import { PageLoader } from "components/Commons";
-import Header from "components/Commons/Header";
+import { PageLoader } from "components/commons";
+import Header from "components/commons/Header";
 import { MRP, OFFER_PRICE } from "components/constants";
 import { cartTotalOf } from "components/utils";
 import { useFetchCartProducts } from "hooks/reactQuery/useProductsApi";

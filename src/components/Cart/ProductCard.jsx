@@ -1,6 +1,6 @@
 import { useState, memo } from "react";
 
-import ProductQuantity from "components/Commons/ProductQuantity";
+import ProductQuantity from "components/commons/ProductQuantity";
 import { Delete } from "neetoicons";
 import { Alert, Typography } from "neetoui";
 import { prop } from "ramda";
