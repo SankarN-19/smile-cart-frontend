@@ -1,4 +1,6 @@
-import AddToCart from "components/commons/AddToCart";
+import { memo } from "react";
+
+import AddToCart from "components/Commons/AddToCart";
 import { Typography } from "neetoui";
 import { Link } from "react-router-dom";
 import routes from "routes";
@@ -16,15 +18,11 @@ const ProductListItem = ({
     to={buildUrl(routes.products.show, { slug })}
   >
     <img alt={name} className="h-40 w-40" src={imageUrl} />
-
     <Typography className="text-center" weight="semibold">
       {name}
     </Typography>
-
     <Typography>${offerPrice}</Typography>
-
     <AddToCart {...{ availableQuantity, slug }} />
   </Link>
 );
-
-export default ProductListItem;
+export default memo(ProductListItem);

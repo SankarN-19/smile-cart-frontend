@@ -1,17 +1,19 @@
+import { memo } from "react";
+
 import classNames from "classnames";
 import { Button, Typography } from "neetoui";
 import { gt, keys } from "ramda";
-import { Trans, useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
 import routes from "routes";
 import useCartItemsStore from "stores/useCartItemsStore";
 
 const PriceCard = ({ totalMrp, totalOfferPrice }) => {
-  const { t } = useTranslation();
   const totalDiscounts = totalMrp - totalOfferPrice;
   const isDiscountPresent = gt(totalDiscounts, 0);
   const discountPercentage = ((totalDiscounts / totalMrp) * 100).toFixed(1);
 
   const itemsCount = useCartItemsStore(store => keys(store.cartItems).length);
+  const { t } = useTranslation();
 
   return (
     <div className="neeto-ui-rounded neeto-ui-border-black space-y-2 border p-3">
@@ -26,7 +28,6 @@ const PriceCard = ({ totalMrp, totalOfferPrice }) => {
           values={{ mrp: totalMrp }}
         />
       </Typography>
-
       {isDiscountPresent && (
         <>
           <Typography className="flex justify-between text-green-700">
@@ -36,7 +37,6 @@ const PriceCard = ({ totalMrp, totalOfferPrice }) => {
               values={{ discounts: totalDiscounts, discountPercentage }}
             />
           </Typography>
-
           <Typography className="flex justify-between">
             <Trans
               components={{ span: <span /> }}
@@ -44,13 +44,11 @@ const PriceCard = ({ totalMrp, totalOfferPrice }) => {
               values={{ offerPrice: totalOfferPrice }}
             />
           </Typography>
-
           <span className="neeto-ui-text-gray-500 text-sm">
             {t("itemCount", { count: itemsCount })}
           </span>
         </>
       )}
-
       <div className="flex flex-col items-center pt-4">
         <Button
           className="bg-neutral-800"
@@ -61,5 +59,4 @@ const PriceCard = ({ totalMrp, totalOfferPrice }) => {
     </div>
   );
 };
-
-export default PriceCard;
+export default memo(PriceCard);

@@ -1,17 +1,19 @@
 import { useRef } from "react";
 
-import { TooltipWrapper } from "components/commons";
 import { VALID_COUNT_REGEX } from "components/constants";
 import useSelectedQuantity from "components/hooks/useSelectedQuantity";
-import { Input, Button, Toastr } from "neetoui";
+import { useShowProduct } from "hooks/reactQuery/useProductsApi";
+import { Button, Input, Toastr } from "neetoui";
 
-const ProductQuantity = ({ slug, availableQuantity }) => {
-  const countInputFocus = useRef(null);
+import TooltipWrapper from "./TooltipWrapper";
+
+const ProductQuantity = ({ slug }) => {
+  const { data: product = {} } = useShowProduct(slug);
+  const { availableQuantity } = product;
   const { selectedQuantity, setSelectedQuantity } = useSelectedQuantity(slug);
-
   const parsedSelectedQuantity = parseInt(selectedQuantity) || 0;
   const isNotValidQuantity = parsedSelectedQuantity >= availableQuantity;
-
+  const countInputFocus = useRef(null);
   const preventNavigation = e => {
     e.stopPropagation();
     e.preventDefault();
@@ -43,7 +45,6 @@ const ProductQuantity = ({ slug, availableQuantity }) => {
           setSelectedQuantity(parsedSelectedQuantity - 1);
         }}
       />
-
       <Input
         nakedInput
         className="ml-2"
@@ -53,7 +54,6 @@ const ProductQuantity = ({ slug, availableQuantity }) => {
         onChange={handleSetCount}
         onClick={preventNavigation}
       />
-
       <TooltipWrapper
         content="Reached maximum units"
         position="top"

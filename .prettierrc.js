@@ -11,5 +11,6 @@ module.exports = {
   bracketSpacing: true,
   bracketSameLine: false,
   proseWrap: "always",
-  endOfLine: "auto",
+  endOfLine: "lf",
+  tailwindConfig: "./tailwind.config.js",
 };

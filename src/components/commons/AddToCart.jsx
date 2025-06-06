@@ -17,7 +17,7 @@ const AddToCart = ({ slug, availableQuantity }) => {
     return <Button label="Add to cart" size="large" onClick={handleClick} />;
   }
 
-  return <ProductQuantity {...{ availableQuantity, slug }} />;
+  return <ProductQuantity {...{ slug, availableQuantity }} />;
 };
 
 export default AddToCart;

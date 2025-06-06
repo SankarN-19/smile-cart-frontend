@@ -1,10 +1,10 @@
 const routes = {
   root: "/",
-  cart: "/cart",
   products: {
     index: "/products",
     show: "/products/:slug",
   },
+  cart: "/cart",
   checkout: "/checkout",
 };
 

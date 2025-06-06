@@ -15,4 +15,5 @@ const useDebounce = value => {
 
   return debouncedValue;
 };
+
 export default useDebounce;

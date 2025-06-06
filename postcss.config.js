@@ -1,5 +1,4 @@
 module.exports = {
-  tailwindConfig: "./tailwind.config.js",
   plugins: [
     require("postcss-import"),
     require("postcss-flexbugs-fixes"),

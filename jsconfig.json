@@ -1,5 +1,5 @@
 {
-  "compilerOptions": {
+    "compilerOptions": {
     "target": "ESNext",
     "allowSyntheticDefaultImports": true,
     "strictNullChecks": true,
@@ -15,8 +15,8 @@
       "constants": ["src/constants"],
       "constants/*": ["src/constants/*"],
       "components/*": ["src/components/*"],
-      "hooks": ["src/components/hooks"],
-      "hooks/*": ["src/components/hooks/*"],
+      "hooks": ["src/hooks"],
+      "hooks/*": ["src/hooks/*"],
       "routes": ["src/routes"],
       "routes/*": ["src/routes/*"],
       "stores": ["src/stores"],
